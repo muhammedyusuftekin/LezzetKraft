@@ -1,0 +1,27 @@
+{
+  "translation": {
+    "welcome": "Hoş Geldiniz",
+    "login": "Giriş Yap",
+    "register": "Üye Ol",
+    "email": "E-posta",
+    "password": "Şifre",
+    "confirmPassword": "Şifre Tekrar",
+    "username": "Kullanıcı Adı",
+    "profile": "Profil",
+    "logout": "Çıkış Yap",
+    "ingredients": {
+      "title": "Malzemeler",
+      "select": "Malzeme Seçin",
+      "selected": "Seçilen Malzemeler",
+      "continue": "Devam Et"
+    },
+    "recipes": {
+      "title": "Tarifler",
+      "suggested": "Önerilen Tarifler",
+      "difficulty": "Zorluk",
+      "prepTime": "Hazırlık",
+      "cookTime": "Pişirme",
+      "minutes": "dk"
+    }
+  }
+} 

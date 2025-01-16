@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #1a0f2e 0%, #0f1a2e 50%, #162435 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Radyal gradient efektleri */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(255, 107, 107, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 90% 50%, rgba(108, 92, 231, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(72, 187, 120, 0.03) 0%, transparent 40%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* SVG desen animasyonu */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 15c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 17.5c-3 0-5.5-2.5-5.5-5.5S9 6.5 12 6.5s5.5 2.5 5.5 5.5-2.5 5.5-5.5 5.5zm0-9c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5z' fill='rgba(255,255,255,0.02)'/%3E%3C/svg%3E");
+  background-position: 0 0, 10px 10px;
+  animation: backgroundFloat 30s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Parlayan yemek elementleri */
+.food-element {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: glow 4s ease-in-out infinite;
+}
+
+.food-element:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.food-element:nth-child(2) {
+  top: 60%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.food-element:nth-child(3) {
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 2s;
+}
+
+/* Animasyonlar */
+@keyframes glow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+}
+
+@keyframes backgroundFloat {
+  0% {
+    background-position: 0 0, 10px 10px;
+  }
+  100% {
+    background-position: 100px 100px, 110px 110px;
+  }
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+/* İçerik alanları için cam efekti */
+.content-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(31, 31, 53, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.content-page h1 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.content-page p {
+  color: rgba(255, 255, 255, 0.8);
+}

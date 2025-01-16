@@ -1,0 +1,189 @@
+.header {
+  background-color: #1a1a1a;
+  padding: 0.5rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #8a2be2;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #8a2be2;
+}
+
+.nav-links li a.disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.login-button {
+  background-color: #8a2be2;
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 50px;
+  border: none;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #7425c5;
+  color: white;
+}
+
+.signup-button {
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 50px;
+  border: 1px solid #ff0000;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 1rem;
+  transition: all 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: #ff0000;
+  color: white;
+}
+
+.logo a {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #ff6b6b;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #ff5252;
+}
+
+.profile-menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-button {
+  background: linear-gradient(135deg, #6c5ce7, #a166ab);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.profile-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: rgba(31, 31, 53, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 8px 0;
+  min-width: 180px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: dropdownFade 0.3s ease;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-dropdown a,
+.profile-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.profile-dropdown a:hover,
+.profile-dropdown button:hover {
+  background-color: rgba(255, 107, 107, 0.1);
+}
+
+.profile-dropdown a.disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.profile-dropdown button {
+  color: #ff6b6b;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 1rem;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .auth-buttons {
+    margin-left: auto;
+  }
+}

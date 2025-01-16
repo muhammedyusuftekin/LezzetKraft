@@ -1,0 +1,114 @@
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e1e2e, #2d2d44);
+  padding: 2rem;
+}
+
+.register-form-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.register-header h2 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.register-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-group input {
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.2);
+}
+
+.register-button {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6c5ce7, #a166ab);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.register-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+}
+
+.register-footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.register-footer a {
+  color: #6c5ce7;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.register-footer a:hover {
+  color: #a166ab;
+}
+
+@media (max-width: 480px) {
+  .register-form-container {
+    padding: 2rem;
+  }
+
+  .register-header h2 {
+    font-size: 1.8rem;
+  }
+}
