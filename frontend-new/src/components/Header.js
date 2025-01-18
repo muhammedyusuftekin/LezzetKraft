@@ -8,10 +8,16 @@ function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
   const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     checkLoginStatus();
   }, [location]);
+
+  useEffect(() => {
+    // Sayfa değiştiğinde mobil menüyü kapat
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   const checkLoginStatus = async () => {
     const token = localStorage.getItem('token');
@@ -43,10 +49,12 @@ function Header() {
     localStorage.removeItem('token');
     setIsLoggedIn(false);
     setUsername('');
+    setIsMobileMenuOpen(false);
     navigate('/');
   };
 
   const scrollToSection = (sectionId) => {
+    setIsMobileMenuOpen(false);
     if (window.location.pathname !== '/') {
       navigate('/');
       setTimeout(() => {
@@ -77,6 +85,11 @@ function Header() {
     }
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setShowProfileMenu(false);
+  };
+
   return (
     <header className="header">
       <nav className="nav-container">
@@ -86,7 +99,18 @@ function Header() {
             navigate('/');
           }}>LezzetKraft</a>
         </div>
-        <div className="nav-menu">
+
+        <button 
+          className={`mobile-menu-button ${isMobileMenuOpen ? 'active' : ''}`}
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
           <ul className="nav-links">
             <li><a href="#" onClick={(e) => {
               e.preventDefault();
@@ -116,8 +140,34 @@ function Header() {
               <li><Link to="/siparislerim" className="disabled">Siparişlerim</Link></li>
             )}
           </ul>
+
+          <div className="mobile-auth-buttons">
+            {isLoggedIn ? (
+              <div className="profile-menu-container">
+                <button 
+                  className="profile-button"
+                  onClick={() => setShowProfileMenu(!showProfileMenu)}
+                >
+                  {username}
+                </button>
+                {showProfileMenu && (
+                  <div className="profile-dropdown">
+                    <Link to="/profile">Profil Bilgileri</Link>
+                    <Link to="/siparislerim" className="disabled">Siparişlerim</Link>
+                    <button onClick={handleLogout}>Çıkış Yap</button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <>
+                <Link to="/login" className="login-button">Giriş Yap</Link>
+                <Link to="/register" className="signup-button">Üye Ol</Link>
+              </>
+            )}
+          </div>
         </div>
-        <div className="auth-buttons">
+
+        <div className="desktop-auth-buttons">
           {isLoggedIn ? (
             <div className="profile-menu-container">
               <button 
