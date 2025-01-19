@@ -199,7 +199,7 @@ const RecipeSuggestions = ({ selectedIngredients, nutritionSummary, onViewDetail
   const toggleFavorite = async (recipeId) => {
     try {
       const method = favorites.includes(recipeId) ? 'DELETE' : 'POST';
-      const response = await fetch(`http://localhost:5001/api/recipes/favorites/${recipeId}`, {
+      const response = await fetch(`https://lezzetkraftapp-b9hnafgkebhhg7az.francecentral-01.azurewebsites.net/api/recipes/favorites/${recipeId}`, {
         method,
         headers: {
           'Content-Type': 'application/json',

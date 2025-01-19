@@ -14,7 +14,7 @@ const RecipeDetails = () => {
 
   const fetchRecipeDetails = async () => {
     try {
-      const response = await fetch(`http://localhost:5001/api/recipes/${id}`);
+      const response = await fetch(`https://lezzetkraftapp-b9hnafgkebhhg7az.francecentral-01.azurewebsites.net/api/recipes/${id}`);
       if (!response.ok) {
         throw new Error('Tarif detayları yüklenemedi');
       }

@@ -19,7 +19,7 @@ const Orders = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:5001/api/orders', {
+      const response = await fetch('https://lezzetkraftapp-b9hnafgkebhhg7az.francecentral-01.azurewebsites.net/api/orders', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
